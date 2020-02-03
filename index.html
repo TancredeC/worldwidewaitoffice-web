@@ -2,50 +2,69 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>worldwidewait.office is coming soon</title>
+    <link href="css/app.css">
+    <title>threeJS Crash Course</title>
   </head>
   <body>
-    <div id="container"></div>
+    <canvas id="myCanvas"></div>
+      <script src="js/three.js"></script>
       <script>
-        // Set the scene size.
-        const WIDTH = 1920;
-        const HEIGHT = 1080;
+        var renderer,
+            scene,
+            camera,
+            myCanvas = document.getElementById('myCanvas');
 
-        // Set some camera attributes.
-        const VIEW_ANGLE = 45;
-        const ASPECT = WIDTH / HEIGHT;
-        const NEAR = 0.1;
-        const FAR = 10000;
+        // RENDERER
+        renderer = new THREE.WebGLRenderer({canvas: myCanvas, antialias: true});
+        renderer.setClearColor(0x00ff00);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
 
-        // Get the DOM element to attach to
-        const container =
-            document.querySelector('#container');
+        // CAMERA
+        var camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 3000);
 
-        // Create a WebGL renderer, camera
-        // and a scene
-        const renderer = new THREE.WebGLRenderer();
-        const camera =
-            new THREE.PerspectiveCamera(
-                VIEW_ANGLE,
-                ASPECT,
-                NEAR,
-                FAR
-            );
+        // SCENE
+        var scene = new THREE.Scene();
 
-        const scene = new THREE.Scene();
+        // LIGHTS
+        var light = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(light);
 
-        // Add the camera to the scene.
-        scene.add(camera);
+        var light2 = new THREE.PointLight(0xffffff, 0.5);
+        scene.add(light2);
 
-        // Start the renderer.
-        renderer.setSize(WIDTH, HEIGHT);
+        var fontLoader = new THREE.FontLoader();
+        fontLoader.load('../fonts/adieu.typeface.json', function(adieu){
+          var textGeo = new THREE.TextGeometry('worldwidewaitoffice.world', {
+            size: 10,
+            height: 5,
+            curveSegments: 6,
+            extrudeMaterial: 1,
+            font: adieu,
+          });
+          var color = new THREE.Color();
+          color.setRGB(0, 0, 255);
+          var textMaterial = new THREE.MeshBasicMaterial({ color: color });
+          var text = new THREE.Mesh(textGeo, textMaterial);
+        })
+        text.position.set (0, 0, -1000);
 
-        // Attach the renderer-supplied
-        // DOM element.
-        container.appendChild(renderer.domElement);
+        scene.add(text);
+
+        requestAnimationFrame(render);
+
+        function render() {
+          mesh.rotation.x += 0.01;
+          mesh.rotation.y += 0.05;
+          renderer.render(scene, camera);
+          requestAnimationFrame(render);
+        }
+
+        renderer.render(scene, camera);
+        // document.body.appendChild(renderer.domElement);
 
       </script>
 
-  <script src="js/three.min.js"></script>
+
   </body>
 </html>
