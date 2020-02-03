@@ -50,6 +50,7 @@ var cubeSize = 120;
 var geometry = new THREE.ConeBufferGeometry(cubeSize, cubeSize, cubeSize); // BufferAttribute allows for more efficient passing of data to the GPU
 
 var material = new THREE.MeshNormalMaterial({
+  material.shading = THREE.FlatShading;
   wireframe: false,
   fog: true,
   shading: THREE.FlatShading,
