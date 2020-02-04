@@ -2,6 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72661250-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-72661250-2');
+    </script>
     <link rel="stylesheet" href="css/main.css">
     <title>worldwidewaitoffice.world | playground</title>
   </head>
@@ -13,17 +22,13 @@
   "use strict";
 
 /*
-* 3D FLOATING TYPO
-* Made with ThreeJS - Enjoy!
+* Worldwidewaitoffice.world - Playground
+* Made by ilithya - edited by TancredeC
 * https://threejs.org/
 *
 * Move the cursor to zoom in/out and float around the cubed space.
 * On mobile touch + drag screen to zoom in/out and float.
 *
-* Inspired by one of the ThreeJS examples in documentation.
-*
-* #014 - #100DaysOfCode
-* By ilithya | 2019
 */
 var nearDist = 0.1;
 var farDist = 10000;
