@@ -1,7 +1,26 @@
 body {
 	height: 100vh;
-	background-color: #000022; // blue
+	background-color: #000022;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
+	font-family: 'Pano Regular', sans-sans-serif;
+	font-size: 0.65em;
+	font-weight: normal;
+	line-height: 1.4;
+}
+
+h1 {
+	margin: 0;
+	padding: 1vh 0 0 1vw;
+	position: relative;
+	color: #FFF;
+}
+/* FONTS */
+@font-face {
+    font-family: 'Pano Regular';
+    src: url('../fonts/Pano-Regular.woff2') format('woff2'),
+        url('../fonts/Pano-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
