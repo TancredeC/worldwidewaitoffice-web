@@ -35,7 +35,7 @@ var camera = new THREE.PerspectiveCamera(
   farDist
 );
 camera.position.x = farDist * -2;
-camera.position.z = 500;
+camera.position.z = 300;
 var renderer = new THREE.WebGLRenderer({
   antialias: true
 });
@@ -97,12 +97,12 @@ var loader = new THREE.FontLoader();
 var textMesh = new THREE.Mesh();
 
 var createTypo = function createTypo(font) {
-  var word = "worldwidewaitoffice";
+  var word = "worldwidewaitoffice.world";
   var typoProperties = {
     font: font,
     size: 40,
     height: 20 / 2,
-    curveSegments: 12,
+    curveSegments: 24,
     bevelEnabled: false,
     bevelThickness: 0,
     bevelSize: 6,
