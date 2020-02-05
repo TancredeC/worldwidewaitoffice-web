@@ -1,27 +1,28 @@
-body {
-	height: 100vh;
-	background-color: #000022;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	font-family: 'Pano Regular', sans-serif;
-	font-size: 1em;
-	font-weight: normal;
-	line-height: 1.4;
+@font-face {
+  font-family: 'Pano Regular';
+  src: url('../fonts/Pano-Regular.woff2') format('woff2'),
+    url('../fonts/Pano-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
+body {
+  height: 100vh;
+  background-color: #000022;
+  color: #FFF;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Pano Regular', sans-serif;
+  font-size: 1em;
+  font-weight: normal;
+}
 
 h1 {
-	margin: 0;
-	padding: 1vh 0 0 1vw;
-	position: fixed;
-	color: #FFF;
-}
-/* FONTS */
-@font-face {
-    font-family: 'Pano Regular';
-    src: url('../fonts/Pano-Regular.woff2') format('woff2'),
-        url('../fonts/Pano-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  display: block;
+  line-height: 1em;
+  margin: 0;
+  position: fixed;
+  padding: 1em 0 0 1.25em;
+  width: 33.333%;
 }
