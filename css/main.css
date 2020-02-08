@@ -17,12 +17,43 @@ body {
   font-size: 1em;
   font-weight: normal;
 }
+a, a:visited {
+  color: #FFF;
+  text-decoration: none;
+}
 
 h1 {
+  display: block;
+  font-size: 1.5em;
+  line-height: 1em;
+  margin: 0;
+  position: fixed;
+  padding: 1em 0 0 1em;
+  width: 33.333%;
+}
+#contact .mail {
   display: block;
   line-height: 1em;
   margin: 0;
   position: fixed;
-  padding: 1em 0 0 1.25em;
+  bottom: 2.75em;
+  left: 1.25em;
   width: 33.333%;
+}
+#contact .ig {
+  display: block;
+  line-height: 1em;
+  margin: 0;
+  position: fixed;
+  bottom: 1em;
+  left: 1.25em;
+  width: 33.333%;
+}
+@media screen and (min-width:320px) and (max-width: 375px) {
+  h1 {
+    font-size: 1.118em;
+  }
+  #contact .mail, #contact .ig {
+    font-size: 0.718em;
+  }
 }
