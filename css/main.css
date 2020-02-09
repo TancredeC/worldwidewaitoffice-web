@@ -34,7 +34,7 @@ a, a:visited {
   min-height: 100px;
 }
 .logo {
-  padding: 1em 0 0 1em;
+  padding: 1em 0 0 1.5em;
 }
 .logo h1 {
   font-size: 1.5em;
@@ -59,13 +59,19 @@ a, a:visited {
   height: 10vh;
   min-height: 100px;
 }
-.contact .mail {
-  line-height: 1em;
-  margin: 0;
+.contact {
+  display: flex;
+  flex-direction: column;
 }
+.contact .mail {
+    line-height: 2em;
+    margin: 0;
+    padding: 0 0 0 1.5em;
+  }
+
 .contact .ig {
-  line-height: 1em;
   margin: 0;
+  padding: 0 0 1em 1.5em;
 }
 @media screen and (min-width:320px) and (max-width: 375px) {
   .logo h1 {
