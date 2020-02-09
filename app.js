@@ -108,12 +108,18 @@ loader.load(
 
 var mouseX = 0;
 var mouseY = 0;
+// mrdotb edit
+// Edit ignorePercentBot value 1/8 top et bottom now
+var ignorePercentBot = window.innerHeight / 8;
+var ignorePercentTop = window.innerHeight - ignorePercentBot;
 var mouseFX = {
   windowHalfX: window.innerWidth / 2,
   windowHalfY: window.innerHeight / 2,
   coordinates: function coordinates(coordX, coordY) {
-    mouseX = (coordX - mouseFX.windowHalfX) * 10;
-    mouseY = (coordY - mouseFX.windowHalfY) * 10;
+    if (coordY > ignorePercentBot && coordY < ignorePercentTop) {
+      mouseX = (coordX - mouseFX.windowHalfX) * 10;
+      mouseY = (coordY - mouseFX.windowHalfY) * 10;
+    }
   },
   onMouseMove: function onMouseMove(e) {
     mouseFX.coordinates(e.clientX, e.clientY);
@@ -132,14 +138,18 @@ var render = function render() {
   requestAnimationFrame(render); // Camera animation
   // Works with onMouseMove and onTouchMove functions
 
-  camera.position.x += (mouseX - camera.position.x) * 0.05;
-  camera.position.y += (mouseY * -1 - camera.position.y) * 0.05;
+  // mrdotb edit
+  // reduce speed by divising mouseX and mouseY by 10
+  camera.position.x += (mouseX / 10 - camera.position.x) * 0.05;
+  camera.position.y += (mouseY / 10 * -1 - camera.position.y) * 0.05;
   camera.lookAt(scene.position); // Rotates the object to face a point in world space
 
   var t = Date.now() * 0.001;
   var rx = Math.sin(t * 0.7) * 0.5;
   var ry = Math.sin(t * 0.3) * 0.5;
   var rz = Math.sin(t * 0.2) * 0.5;
+  // mrdotb edit
+  // comment the assignation here to see how it change the animations
   group.rotation.x = rx;
   group.rotation.y = ry;
   group.rotation.z = rz;
