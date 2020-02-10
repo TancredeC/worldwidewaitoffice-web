@@ -73,7 +73,7 @@ a, a:visited {
 }
 @media screen and (min-width:320px) and (max-width: 375px) {
   .logo h1 {
-    font-size: 2em;
+    font-size: 3em;
   }
   .contact .mail, .contact .ig {
     font-size: 1.3em;
