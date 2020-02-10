@@ -71,11 +71,11 @@ a, a:visited {
   margin: 0;
   padding: 0 0 1em 1.5em;
 }
-@media screen and (min-width:320px) and (max-width: 375px) {
+@media screen and (min-width: 320px) and (max-width: 375px) {
   .logo h1 {
-    font-size: 3em;
+    font-size: 1.2em;
   }
   .contact .mail, .contact .ig {
-    font-size: 1.3em;
+    font-size: 0.97em;
   }
 }
